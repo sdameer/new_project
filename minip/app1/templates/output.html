@@ -1,0 +1,14 @@
+{% if new_data %}
+    <div class="card">
+        <h3>Transcript:</h3>
+        <p>{{ new_data.transcript }}</p>
+    </div>
+    <div class="card">
+        <h3>Summary:</h3>
+        <p>{{ new_data.summary }}</p>
+    </div>
+    <div class="card {% if new_data.sentiment == 'positive' %}sentiment-positive{% endif %} {% if new_data.sentiment == 'negative' %}sentiment-negative{% endif %} {% if new_data.sentiment == 'neutral' %}sentiment-neutral{% endif %}">
+        <h3>Sentiment:</h3>
+        <p>{{ new_data.sentiment|capfirst }}</p>
+    </div>
+{% endif %}
